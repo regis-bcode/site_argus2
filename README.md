@@ -2,23 +2,57 @@
 
 Projeto estático (HTML + CSS + JS vanilla) com múltiplas páginas institucionais para empresa de tecnologia em saúde.
 
-## Estrutura
+## Estrutura no GitHub
 
-- `index.html`
-- `about.html`
-- `solutions.html`
-- `segments.html`
-- `methodology.html`
-- `resources.html`
-- `faq.html`
-- `contact.html`
-- `privacy.html`
-- `assets/css/style.css`
-- `assets/js/main.js`
-- `assets/img/` (placeholders gerais)
-- `assets/images/` (logos e imagens fornecidas por você)
-- `robots.txt`
-- `sitemap.xml`
+Arquivos e pastas principais do repositório (com links diretos):
+
+- [`index.html`](./index.html)
+- [`about.html`](./about.html)
+- [`solutions.html`](./solutions.html)
+- [`segments.html`](./segments.html)
+- [`methodology.html`](./methodology.html)
+- [`resources.html`](./resources.html)
+- [`faq.html`](./faq.html)
+- [`contact.html`](./contact.html)
+- [`privacy.html`](./privacy.html)
+- [`robots.txt`](./robots.txt)
+- [`sitemap.xml`](./sitemap.xml)
+- [`assets/css/style.css`](./assets/css/style.css)
+- [`assets/js/main.js`](./assets/js/main.js)
+- [`assets/img/hero-equipe-medica.png`](./assets/img/hero-equipe-medica.png)
+- [`assets/images/Logo_Argus Branco.png`](./assets/images/Logo_Argus%20Branco.png)
+- [`assets/images/hero-equipe-medica.png`](./assets/images/hero-equipe-medica.png)
+- [`scripts/resolve_merge_conflicts_keep_relative.sh`](./scripts/resolve_merge_conflicts_keep_relative.sh)
+
+Visão em árvore:
+
+```text
+.
+├── index.html
+├── about.html
+├── solutions.html
+├── segments.html
+├── methodology.html
+├── resources.html
+├── faq.html
+├── contact.html
+├── privacy.html
+├── robots.txt
+├── sitemap.xml
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   ├── img/
+│   │   └── hero-equipe-medica.png
+│   └── images/
+│       ├── Logo_Argus Branco.png
+│       ├── hero-equipe-medica.png
+│       └── pasta
+└── scripts/
+    └── resolve_merge_conflicts_keep_relative.sh
+```
 
 ## Deploy no GitHub Pages
 
