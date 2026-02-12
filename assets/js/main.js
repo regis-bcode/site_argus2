@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('page-loaded');
+
   const menuButton = document.querySelector('[data-menu-toggle]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
 
@@ -9,6 +11,52 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.toggle('open');
     });
   }
+
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealElements.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  const parallaxItems = document.querySelectorAll('[data-parallax]');
+  if (parallaxItems.length) {
+    const onScroll = () => {
+      const viewportHeight = window.innerHeight || 1;
+      parallaxItems.forEach((item) => {
+        const speed = Number(item.getAttribute('data-parallax')) || 0.12;
+        const rect = item.getBoundingClientRect();
+        const progress = (rect.top + rect.height / 2 - viewportHeight / 2) / viewportHeight;
+        item.style.setProperty('--parallax-y', `${-progress * speed * 100}px`);
+      });
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  }
+
+  const sameOriginLinks = document.querySelectorAll('a[href]');
+  sameOriginLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || link.target === '_blank') return;
+      if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
+      event.preventDefault();
+      document.body.classList.add('page-leave');
+      window.setTimeout(() => {
+        window.location.href = href;
+      }, 250);
+    });
+  });
 
   const accordions = document.querySelectorAll('.accordion-item');
   accordions.forEach((item) => {
@@ -51,16 +99,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', update);
     update();
-  });
-
-  const spyLinks = document.querySelectorAll('[data-scrollspy] a[href^="#"]');
-  spyLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      const id = link.getAttribute('href');
-      const target = id ? document.querySelector(id) : null;
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
   });
 });
