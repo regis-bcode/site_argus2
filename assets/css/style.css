@@ -90,10 +90,11 @@ img {
 }
 
 .hero-brand {
-  height: 124px;
-  width: auto;
-  max-width: min(520px, 92%);
-  margin: -1.8rem 0 1rem;
+  width: 60%;
+  height: auto;
+  max-width: 520px;
+  display: block;
+  margin: -1.8rem auto 1rem;
 }
 
 .logo-mark {
@@ -461,7 +462,7 @@ textarea { min-height: 130px; resize: vertical; }
 
 @media (max-width: 960px) {
   .logo-image { height: 42px; }
-  .hero-brand { height: 72px; max-width: 90%; margin: 0 0 .7rem; }
+  .hero-brand { width: 60%; height: auto; max-width: 90%; display: block; margin: 0 auto .7rem; }
   .hero-media { min-height: 360px; }
 
   .nav-links,
