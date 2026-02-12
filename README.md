@@ -15,7 +15,8 @@ Projeto estático (HTML + CSS + JS vanilla) com múltiplas páginas instituciona
 - `privacy.html`
 - `assets/css/style.css`
 - `assets/js/main.js`
-- `assets/img/` (placeholders)
+- `assets/img/` (placeholders gerais)
+- `assets/images/` (logos e imagens fornecidas por você)
 - `robots.txt`
 - `sitemap.xml`
 
