@@ -29,4 +29,14 @@ Projeto estático (HTML + CSS + JS vanilla) com múltiplas páginas instituciona
 4. Salve. Aguarde alguns minutos até gerar a URL pública.
 5. Se usar domínio customizado, configure em **Custom domain** e ajuste DNS.
 
-> Observação: mantenha os caminhos absolutos (`/assets/...`) quando o site estiver publicado na raiz do domínio.
+> Observação: os caminhos estão relativos (ex.: `assets/...`) para funcionar tanto na raiz quanto em subpastas (como GitHub Pages).
+
+## Resolução rápida de conflitos de merge
+
+Se aparecerem conflitos com marcadores (`<<<<<<<`, `=======`, `>>>>>>>`) e você quiser manter a versão com caminhos relativos, execute:
+
+```bash
+./scripts/resolve_merge_conflicts_keep_relative.sh
+git add -A
+git commit -m "Resolve conflitos mantendo paths relativos"
+```
