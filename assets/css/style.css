@@ -887,3 +887,19 @@ body.page-leave {
     max-width: 100%;
   }
 }
+
+
+.home-banner {
+  margin-top: 76px;
+}
+
+.home-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero.hero-fullscreen {
+  background: #0b3a67;
+}
