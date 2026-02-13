@@ -770,3 +770,120 @@ body.page-leave {
     font-size: .93rem;
   }
 }
+
+/* Ajuste final solicitado: menu estilo corporativo + hero fullscreen */
+.site-header {
+  background: linear-gradient(90deg, rgba(6,22,45,.96), rgba(8,36,71,.94));
+  border-bottom: 1px solid rgba(144, 193, 255, .35);
+}
+
+.nav-wrap {
+  min-height: 76px;
+}
+
+.logo-image {
+  height: 56px;
+}
+
+.nav-links {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  gap: .1rem;
+}
+
+.nav-links a {
+  color: #e9f3ff;
+  padding: .55rem .75rem;
+  border-radius: 10px;
+}
+
+.nav-links a::before {
+  content: "▾";
+  font-size: .64rem;
+  margin-left: .32rem;
+  opacity: .75;
+  float: right;
+}
+
+.nav-links a[href="index.html"]::before,
+.nav-links a[href="contact.html"]::before,
+.nav-links a[aria-current="page"]::before {
+  content: "";
+  margin: 0;
+}
+
+.header-actions {
+  gap: .45rem;
+}
+
+.btn-header-alt {
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.65);
+  color: #fff;
+  background: rgba(255,255,255,.06);
+  font-weight: 700;
+  padding: .64rem 1rem;
+}
+
+.btn-header-alt:hover {
+  background: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+
+.hero.hero-fullscreen {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(13,36,58,.70), rgba(12,40,72,.42) 52%, rgba(7,23,49,.35)),
+    url('../img/hero-equipe-medica.png') center center / cover no-repeat;
+}
+
+.hero.hero-fullscreen .container {
+  grid-template-columns: 1fr;
+}
+
+.hero-content-left {
+  max-width: 760px;
+  text-align: left;
+}
+
+.hero-breadcrumb {
+  color: #2ad4ff;
+  font-weight: 600;
+  margin-bottom: .6rem;
+}
+
+.hero-list {
+  margin: .5rem 0 1.2rem;
+  padding-left: 1.15rem;
+}
+
+.hero-list li {
+  margin-bottom: .55rem;
+}
+
+.hero-list li::marker {
+  color: #27d9ff;
+}
+
+.hero-brand {
+  width: min(58%, 520px);
+  margin: 0 0 .8rem;
+}
+
+@media (max-width: 960px) {
+  .nav-links a::before {
+    content: "";
+  }
+
+  .hero.hero-fullscreen {
+    min-height: auto;
+    padding: 5.5rem 0 3.4rem;
+  }
+
+  .hero-content-left {
+    max-width: 100%;
+  }
+}
